@@ -1,43 +1,56 @@
 import { useState } from 'react'
 import './App.css'
-import cough from './assets/cough.jpg';
-import fever from './assets/fever.jpg';
-import backpain from './assets/back-pain.jpg';
+import cough from '../public/assets/cough.jpg';
+import fever from '../public/assets/fever.jpg';
+import backpain from '../public/assets/back-pain.jpg';
+import migraine from '../public/assets/migraine.jpg';
+import stomachache from '../public/assets/stomachache.jpg';
+import insomnia from '../public/assets/insomnia.jpg';
+import Logo from './assests/Logo.png'
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import CoughPage from './Components/cough';
-import FeverPage from './Components/fever';
-import BackPainPage from './Components/backpain';
+import Symptoms from './Components/symptoms';
 
 function App() {
   const navigate = useNavigate();
   
   return (
     <>
-      <div className='nav-bar'>
-      </div>
+      <nav className='nav-bar'>
+      <img src={Logo} alt="Logo"/>
+      </nav>
     <Routes>
       <Route path="/" element={
       <>
       <h1>Select your symptom</h1>
       <div className="box-grid">
-        <button onClick={() => navigate('/cough')} >
-        <img src={cough} alt="Description" />
+        <button onClick={() => navigate('/symptoms/cough')} >
+        <img src={cough} alt="Cough" />
         <span>Cough</span>
         </button>
-        <button onClick={() => navigate('/fever')} >
-        <img src={fever} alt="Description" />
+        <button onClick={() => navigate('/symptoms/fever')} >
+        <img src={fever} alt="Fever" />
         <span>Fever</span>
         </button>
-        <button onClick={() => navigate('/backpain')} >
-        <img src={backpain} alt="Description" />
+        <button onClick={() => navigate('/symptoms/backpain')} >
+        <img src={backpain} alt="Back Pain" />
         <span>Back Pain</span>
+        </button>
+        <button onClick={() => navigate('/symptoms/migraine')} >
+        <img src={migraine} alt="Migraine" />
+        <span>Migraine</span>
+        </button>
+        <button onClick={() => navigate('/symptoms/stomachache')} >
+        <img src={stomachache} alt="Stomachache" />
+        <span>Stomach Ache</span>
+        </button>
+        <button onClick={() => navigate('/symptoms/insomnia')} >
+        <img src={insomnia} alt="Insomnia" />
+        <span>Insomnia</span>
         </button>
       </div>
       </>
       }/>
-      <Route path='/cough' element={<CoughPage />} />
-      <Route path='/fever' element={<FeverPage />} />
-      <Route path='/backpain' element={<BackPainPage />} />
+      <Route path='/symptoms/:id' element={<Symptoms />} />
     </Routes>
     </>
   )

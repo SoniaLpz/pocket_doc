@@ -1,0 +1,154 @@
+{
+  "symptoms": [
+    {
+      "id": "cough",
+      "title": "Cough Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home."
+        },
+        {
+          "type": "image",
+          "url": "/assets/overhead-view-organic-tea-with-lemon-slice-honey.jpg",
+          "caption": "A warm drink can soothe your throat"
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Hot lemon & honey", "Herbal tea", "Rest"]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if you have had a cough for more than 3 weeks."
+        }
+      ],
+      "videoUrl": "zSGznvHLLnA"
+    },
+    {
+      "id": "fever",
+      "title": "Fever Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "A fever can be caused by a virus . Here is what you can do at home."
+        },
+        {
+          "type": "image",
+          "url": "/assets/vegetable-soup-with-sliced-yellow-paper.jpg",
+          "caption": "A warm broth help to fight fever and bring nutrients "
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Drink plenty of water", "Keep the room cool", "Paracetamol"]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if you have you have severe thirst and you are lightheaded."
+        }
+      ],
+      "videoUrl": "n5YvtYXSocw"
+    }, 
+    {
+      "id": "backpain",
+      "title": "Back Pain Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home."
+        },
+        {
+          "type": "image",
+          "url": "/assets/high-angle-drink-with-star-anise.jpg",
+          "caption": "A golden latter with curcuma to fight the inflammation"
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Stay active", "Hot or cold packs", "Gentle stretching"]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if you have had a cough for more than 3 weeks."
+        }
+      ],
+      "videoUrl": "2eA2Koq6pTI"
+    },
+    {
+      "id": "migraine",
+      "title": "Migraine Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "There’s no cure for migraine. There are remedies to help manage the pain."
+        },
+        {
+          "type": "image",
+          "url": "/assets/cups-collection-with-herbs.jpg",
+          "caption": "A warm drink can help with migraines. Choose a variery that suit the type of migraines."
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Rest", "No screens", "Calm environments", "limiting your intake of caffeine and alalcohol"]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if you have frequent or severe migraine symptoms."
+        }
+      ],
+      "videoUrl": "QFkAl5wHEbg"
+    },
+    {
+      "id": "stomachache",
+      "title": "Stomach ache Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "Stomach ache and abdominal pain can have different causes. Here is what you can do at home."
+        },
+        {
+          "type": "image",
+          "url": "/assets/rolled-oats-healthy-breakfast-cereal-oat-flakes-black-slate-background.jpg",
+          "caption": "Eat a lot of fibers"
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Balance diet", "Drink a lot of water", "Rest"]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if your stomach ache gets much worse quickly, you have problems with swallowing food or you’re losing weight without trying to."
+        }
+      ],
+      "videoUrl": "IvAx7q2LKqk"
+    }, 
+    {
+      "id": "insomnia",
+      "title": "Insomnia Remedies",
+      "sections": [
+        {
+          "type": "text",
+          "content": "Insomnia can be triggered by many factors.. Here is what you can do at home."
+        },
+        {
+          "type": "image",
+          "url": "/assets/chamomile-tea-cups-arrangement.jpg",
+          "caption": "A warm chamomile tea can help help sleep. Drink before going to bed. "
+        },
+        {
+          "type": "list",
+          "title": "Natural Remedies",
+          "items": ["Make sure your bedroom is dark and quiet", "Create a relaxing bedtime routine", "Exercise regularly "]
+        },
+        {
+          "type": "text",
+          "content": "See a GP if improving your sleep hygiene has not helped or poor sleep quality is affecting your daily life."
+        }
+      ],
+      "videoUrl": "SqFniT-Oyt8"
+    }
+  ]
+}

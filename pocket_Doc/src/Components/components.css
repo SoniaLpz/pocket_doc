@@ -2,22 +2,35 @@
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 250;
+  font-size: 40px;
+  color: white;
+}
+.officialAdvice {
+background: content-box aquamarine;
+}
+
+.image-container {
+  background: content-box green;
   text-align: center;
 }
-
-.Solutions {
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+img {
+  display: block; 
+  width: 400px;         
+  height: 400px;        
+  margin: 0 auto;      
 }
 
-.Solutions li {
-  margin-bottom: 10px;
-  list-style-type: square;
-  margin-left: 0;
-  padding-left: 0;
-  list-style-position: inside;
+.remediesList{
+  background: content-box aquamarine;
+}
+
+.Video {
+  text-align: center;
+  background: content-box green;
 }

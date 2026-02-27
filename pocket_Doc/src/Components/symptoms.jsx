@@ -2,7 +2,8 @@ import './components.css'
 import data from '../../../db.json'
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import MovieClip from './Video/VideoYoutube'
+import MovieClip from './Video/VideoYoutube'; 
+import Ingredients from './ingredientsList/ingredientsList';
 
 function Symptoms() {
   const { id } = useParams();
@@ -29,12 +30,17 @@ function Symptoms() {
     <div key={index} className="sections">
     {section.type === 'text' && <p className="officialAdvice">{section.content}</p>}
     <div className="Columns">
-    {section.type === 'image' && 
+    {section.type === 'image' &&  (
+    <>
     <div className="image-container">
     <p className="captionImage">{section.caption}</p>
     <img className="ImgCaption" src={section.url} />
     </div>
-    }
+    <div className="ingredientsList">
+    <Ingredients />
+    </div>
+    </>
+    )}
     </div>  
     {section.type === 'list' &&
     <div className="remediesList">

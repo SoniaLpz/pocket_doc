@@ -1,0 +1,83 @@
+{
+  "ingredients": [
+    {
+      "id": "cough",
+      "title": "Ingredient List",
+      "sections": [
+        { "id": "1", "name": "Raw Honey", "possede": false },
+        { "id": "2", "name": "Fresh Lemons", "possede": false },
+        { "id": "3", "name": "Ginger Root", "possede": false },
+        { "id": "4", "name": "Broth or Clear Soup", "possede": false },
+        { "id": "5", "name": "Coconut Water", "possede": false },
+        { "id": "6", "name": "Pineapple", "possede": false },
+        { "id": "7", "name": "Garlic and Onions", "possede": false }
+      ]
+    },
+    {
+      "id": "fever",
+      "title": "Ingredient List",
+      "sections": [
+        { "id": "1", "name": "Electrolyte Drinks", "possede": false },
+        { "id": "2", "name": "Coconut Water", "possede": false },
+        { "id": "3", "name": "Bananas", "possede": false },
+        { "id": "4", "name": "Greek Yogurt", "possede": false },
+        { "id": "5", "name": "Oatmeal", "possede": false },
+        { "id": "6", "name": "Peppermint Tea", "possede": false },
+        { "id": "7", "name": "Elderberry Juice", "possede": false }
+    
+      ]
+    },
+    {
+      "id": "backpain",
+      "title": "Back Pain Remedies",
+      "sections": [
+        { "id": "1", "name": "Turmeric & Black Pepper", "possede": false },
+        { "id": "2", "name": "Spinach", "possede": false },
+        { "id": "3", "name": "Pumpkin Seeds", "possede": false },
+        { "id": "4", "name": "Bananas", "possede": false },
+        { "id": "5", "name": "Cruciferous Veggies", "possede": false },
+        { "id": "6", "name": "Berries", "possede": false },
+        { "id": "7", "name": "Bone Broth", "possede": false }
+      ]
+    },
+    {
+      "id": "migraine",
+      "title": "Ingredient List",
+      "sections": [
+        { "id": "1", "name": "Ginger Tea:", "possede": false },
+        { "id": "2", "name": "Dark Leafy Greens", "possede": false },
+        { "id": "3", "name": "Almonds & Pumpkin Seeds", "possede": false },
+        { "id": "4", "name": "Avocado", "possede": false },
+        { "id": "5", "name": "Coconut Water", "possede": false },
+        { "id": "6", "name": "Cucumber & Watermelon", "possede": false },
+        { "id": "7", "name": "Eggs", "possede": false }
+      ]
+    },
+    {
+      "id": "stomachache",
+      "title": "Ingredient List",
+      "sections": [
+        { "id": "1", "name": "Fresh Ginger", "possede": false },
+        { "id": "2", "name": "Peppermint Tea", "possede": false },
+        { "id": "3", "name": "Fennel Seeds", "possede": false },
+        { "id": "4", "name": "Broth or Clear Soup", "possede": false },
+        { "id": "5", "name": "White Rice", "possede": false },
+        { "id": "6", "name": "Kefir or Low-Sugar Greek Yogurt", "possede": false },
+        { "id": "7", "name": "Kombucha", "possede": false }
+      ]
+    }, 
+    {
+      "id": "insomnia",
+      "title": "Ingredient List",
+      "sections": [
+        { "id": "1", "name": "Tart Cherry Juice", "possede": false },
+        { "id": "2", "name": "Walnuts & Pistachios", "possede": false },
+        { "id": "3", "name": "Kiwi", "possede": false },
+        { "id": "4", "name": "Pumpkin Seeds", "possede": false },
+        { "id": "5", "name": "Valerian Root Tea", "possede": false },
+        { "id": "6", "name": "Oatmeal", "possede": false },
+        { "id": "7", "name": "Bananas", "possede": false }
+      ]
+    }
+  ]
+}

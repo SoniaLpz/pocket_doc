@@ -37,6 +37,13 @@ border-radius: 8px;
   font-family: "Gill Sans", sans-serif;
 }
 
+.ingredientsList {
+  grid-column: 2;
+  padding: 15px;
+  border-radius: 8px;
+  background: content-box white;
+}
+
 .ImgCaption {
   display: block; 
   width: 400px;         

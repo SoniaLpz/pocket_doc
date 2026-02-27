@@ -6,7 +6,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home."
+          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home:"
+        },
+        {
+          "type": "text",
+          "content": "⚠️Important: See a GP if you have had a cough for more than 3 weeks."
         },
         {
           "type": "image",
@@ -17,10 +21,6 @@
           "type": "list",
           "title": "Natural Remedies",
           "items": ["Hot lemon & honey", "Herbal tea", "Rest"]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if you have had a cough for more than 3 weeks."
         }
       ],
       "videoUrl": "zSGznvHLLnA"
@@ -31,7 +31,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "A fever can be caused by a virus . Here is what you can do at home."
+          "content": "A fever can be caused by a virus . Here is what you can do at home:"
+        },
+        {
+          "type": "text",
+          "content": "⚠️ Important: See a GP if you have you have severe thirst and you are lightheaded."
         },
         {
           "type": "image",
@@ -42,10 +46,6 @@
           "type": "list",
           "title": "Natural Remedies",
           "items": ["Drink plenty of water", "Keep the room cool", "Paracetamol"]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if you have you have severe thirst and you are lightheaded."
         }
       ],
       "videoUrl": "n5YvtYXSocw"
@@ -56,7 +56,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home."
+          "content": "Most coughs go away on their own within 3 weeks. Here is what you can do at home:"
+        },
+        {
+          "type": "text",
+          "content": "⚠️ Important: See a GP if you have had a cough for more than 3 weeks."
         },
         {
           "type": "image",
@@ -67,10 +71,6 @@
           "type": "list",
           "title": "Natural Remedies",
           "items": ["Stay active", "Hot or cold packs", "Gentle stretching"]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if you have had a cough for more than 3 weeks."
         }
       ],
       "videoUrl": "2eA2Koq6pTI"
@@ -81,7 +81,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "There’s no cure for migraine. There are remedies to help manage the pain."
+          "content": "There’s no cure for migraine. But there are remedies to help manage the pain."
+        },
+        {
+          "type": "text",
+          "content": "⚠️ Important: See a GP if you have frequent or severe migraine symptoms."
         },
         {
           "type": "image",
@@ -91,11 +95,7 @@
         {
           "type": "list",
           "title": "Natural Remedies",
-          "items": ["Rest", "No screens", "Calm environments", "limiting your intake of caffeine and alalcohol"]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if you have frequent or severe migraine symptoms."
+          "items": ["Rest", "No screens", "Calm environments", "limiting your intake of caffeine and alcohol"]
         }
       ],
       "videoUrl": "QFkAl5wHEbg"
@@ -106,7 +106,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "Stomach ache and abdominal pain can have different causes. Here is what you can do at home."
+          "content": "Stomach ache and abdominal pain can have different causes. Here is what you can do at home:"
+        },
+        {
+          "type": "text",
+          "content": "⚠️ Important: See a GP if your stomach ache gets much worse quickly, you have problems with swallowing food or you’re losing weight without trying to."
         },
         {
           "type": "image",
@@ -117,10 +121,6 @@
           "type": "list",
           "title": "Natural Remedies",
           "items": ["Balance diet", "Drink a lot of water", "Rest"]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if your stomach ache gets much worse quickly, you have problems with swallowing food or you’re losing weight without trying to."
         }
       ],
       "videoUrl": "IvAx7q2LKqk"
@@ -131,7 +131,11 @@
       "sections": [
         {
           "type": "text",
-          "content": "Insomnia can be triggered by many factors.. Here is what you can do at home."
+          "content": "Insomnia can be triggered by many factors. Here is what you can do at home:"
+        },
+        {
+          "type": "text",
+          "content": "⚠️ Important: See a GP if improving your sleep hygiene has not helped or poor sleep quality is affecting your daily life."
         },
         {
           "type": "image",
@@ -142,10 +146,6 @@
           "type": "list",
           "title": "Natural Remedies",
           "items": ["Make sure your bedroom is dark and quiet", "Create a relaxing bedtime routine", "Exercise regularly "]
-        },
-        {
-          "type": "text",
-          "content": "See a GP if improving your sleep hygiene has not helped or poor sleep quality is affecting your daily life."
         }
       ],
       "videoUrl": "SqFniT-Oyt8"

@@ -28,12 +28,14 @@ function Symptoms() {
     {symptoms.sections && symptoms.sections.map((section, index) => (
     <div key={index} className="sections">
     {section.type === 'text' && <p className="officialAdvice">{section.content}</p>}
+    <div className="Columns">
     {section.type === 'image' && 
     <div className="image-container">
     <p className="captionImage">{section.caption}</p>
-    <img src={section.url} />
+    <img className="ImgCaption" src={section.url} />
     </div>
     }
+    </div>  
     {section.type === 'list' &&
     <div className="remediesList">
     <h3>{section.title}</h3>
@@ -42,7 +44,7 @@ function Symptoms() {
     </ul>
     </div>
     }
-    </div>  
+    </div>
     ))}
     <div className="Video">
     <MovieClip videoId={symptoms.videoUrl} />

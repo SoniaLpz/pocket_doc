@@ -1,13 +1,14 @@
 import './components.css'
 import data from '../../../db.json'
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import MovieClip from './Video/VideoYoutube'; 
 import Ingredients from './ingredientsList/ingredientsList';
 
 function Symptoms() {
   const { id } = useParams();
   const [symptoms, setSymptoms] = useState([]);
+  const navigate = useNavigate();
 
    const getData = async () => {
     await fetch(`http://localhost:3030/symptoms/${id}`)
@@ -23,6 +24,9 @@ function Symptoms() {
 
   return (
     <div className="Topic">
+    <div className="returnButton">
+      <button onClick={() => navigate(-1)}>Home Page</button>
+    </div>
     <h1>
      {symptoms.title}
     </h1>

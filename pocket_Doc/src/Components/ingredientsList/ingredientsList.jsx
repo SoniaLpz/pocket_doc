@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import './list.css'
+import generatePdf  from '../Pdf Generator/PdfGenerate.jsx'
 
 function Ingredients() {
   const { id } = useParams();
   const [ingredients, setIngredients] = useState([]);
+  const [checkedValues, setValue] = useState([]); 
 
    const getData = async () => {
     await fetch(`http://localhost:3000/ingredients/${id}`)
@@ -17,6 +19,21 @@ function Ingredients() {
     getData();
   }, [id]);
 
+  const handleSelect = (event) => {
+    const {value, checked} = event.target
+    if(checked){
+      setValue(pre => [...pre, value])
+    } else ( 
+      setValue(pre =>{
+        return [...pre.filter(ingredients => ingredients !== value)]
+      })
+    )
+    }
+
+    const PdfGenerator = () => {
+    let jsonData = checkedValues; 
+    generatePdf(jsonData);
+  };
 
   return (
     <div className="List">
@@ -25,9 +42,19 @@ function Ingredients() {
     </h1>
     {ingredients.sections && ingredients.sections.map((section) => (
     <div key={section.id} className="sections">
-    <span>{section.name}</span>
+     <input 
+      type="checkbox"
+      name="ingredients"
+      id={section.id}
+      value={section.name}
+      onChange={handleSelect}
+      />
+      <label for={section.id}>{section.name}</label>
     </div>
     ))}
+    <div className="buttonPdf">
+      <button onClick={PdfGenerator}>Print PDF</button>
+    </div>
     </div>
 );
 };

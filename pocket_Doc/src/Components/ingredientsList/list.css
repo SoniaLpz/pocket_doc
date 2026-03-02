@@ -2,3 +2,18 @@ h1 {
     color: black;
 }
 
+.buttonPdf {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    width: 100%; 
+}
+
+.buttonPdf button {
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: violet;
+    text-align: center;
+}
+

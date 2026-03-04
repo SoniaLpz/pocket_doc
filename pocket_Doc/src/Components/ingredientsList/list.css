@@ -1,5 +1,19 @@
-h1 {
-    color: black;
+.List {
+    background-color: #A7BEA9;
+    border-radius: 8px;
+}
+
+.List h1 {
+    color: #FFFF;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.List .sections {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
 }
 
 .buttonPdf {
@@ -10,10 +24,14 @@ h1 {
 }
 
 .buttonPdf button {
-    height: 20px;
-    margin-top: 10px;
+    height: 30px;
+    margin-top: 25px;
     margin-bottom: 10px;
-    background-color: violet;
+    background-color: #0084CE;
+    color: white;
     text-align: center;
+    justify-content: center; 
+    align-items: center; 
+    font-family: 'Courier New', Courier, monospace;
 }
 

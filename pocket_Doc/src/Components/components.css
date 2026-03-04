@@ -1,4 +1,4 @@
-.Topic {
+.topic {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -7,10 +7,12 @@
 .returnButton button {
   height: 50px;
   width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: aliceblue;
+  text-align: center;
+  line-height: 50px;
+  background-color: #FFFF;
+  color: #5A765E;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .returnButton {
@@ -22,61 +24,83 @@
 h1 {
   text-align: center;
   font-family: "Raleway", sans-serif;
-  font-weight: 250;
-  font-size: 40px;
-  color: white;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #FFFF;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+h3 {
+  color: #FFFF;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
 }
 
 .officialAdvice {
-font-family: "Gill Sans", sans-serif;
-margin-top: 5px;
-margin-bottom: 8px;
-line-height: 1.5;
-background: border-box white; 
-border: 4px solid white; 
-border-radius: 8px;
+  padding: 20px;
+  color: #FFFF;
+  font-family: "Gill Sans", sans-serif;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-.Columns {
+.columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  align-items: center;
+  gap: 25px;
   margin-top: 10px;
 }
 
 .image-container {
-  background: content-box white;
+  background: #A7BEA9;
   text-align: center;
   border-radius: 8px;
+  overflow: hidden;
   font-family: "Gill Sans", sans-serif;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  color: #2F3E30;
 }
 
 .ingredientsList {
   grid-column: 2;
   padding: 15px;
+  background: #A7BEA9;
   border-radius: 8px;
-  background: content-box white;
+  height: auto;
 }
 
-.ImgCaption {
+.captionImage {
+  color: #FFFF;
+}
+
+.img-caption {
   display: block; 
   width: 400px;         
-  height: 400px;        
+  height: 500px;        
   margin: 0 auto;  
   border-bottom-left-radius: 8px;  
   border-bottom-right-radius: 8px;
 }
 
 .remediesList{
-  background: border-box white; 
-  border: 4px solid white; 
   border-radius: 8px;
   grid-column: 2;
   font-family: "Gill Sans", sans-serif;
+  color: #FFFF;
   margin-bottom: 15px;
+  padding-left: 15px;
+  line-height: 1.8;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.Video {
+.video {
+  padding-top: 10px;
+  padding-bottom: 20px;
   text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }

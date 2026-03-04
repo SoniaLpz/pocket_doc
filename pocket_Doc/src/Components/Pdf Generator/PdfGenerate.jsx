@@ -1,6 +1,6 @@
-import {jsPDF} from "jspdf";
+import {jsPDF} from 'jspdf';
 import { applyPlugin } from 'jspdf-autotable'
-import Ingredients from "../ingredientsList/ingredientsList";
+import Ingredients from '../ingredientsList/ingredientsList';
 
 function generatePdf(checkedValues) {
   let fileName = "Grocery List";

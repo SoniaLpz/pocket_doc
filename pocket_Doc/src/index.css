@@ -1,10 +1,11 @@
 body {
   min-height: 100vh; 
-  width: 100%;
   background-image: url("./assests/phuket-thailand-march-27-2024.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
+
+
 

@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './list.css'
 import generatePdf  from '../Pdf Generator/PdfGenerate.jsx'
 
 function Ingredients() {
   const { id } = useParams();
-  const [ingredients, setIngredients] = useState([]);
-  const [checkedValues, setValue] = useState([]); 
+  const [ingredients, setIngredients] = useState({});
+  const [checkedValues, setCheckedValues] = useState([]); 
 
-   const getData = async () => {
-    await fetch(`http://localhost:3000/ingredients/${id}`)
+   const getData = () => {
+    fetch(`http://localhost:3000/ingredients/${id}`)
       .then((response) => response.json())
       .then((result) => setIngredients(result))
       .catch((error) => console.log("error", error));
@@ -22,9 +22,9 @@ function Ingredients() {
   const handleSelect = (event) => {
     const {value, checked} = event.target
     if(checked){
-      setValue(pre => [...pre, value])
+      setCheckedValues(pre => [...pre, value])
     } else ( 
-      setValue(pre =>{
+      setCheckedValues(pre =>{
         return [...pre.filter(ingredients => ingredients !== value)]
       })
     )
@@ -49,7 +49,7 @@ function Ingredients() {
       value={section.name}
       onChange={handleSelect}
       />
-      <label for={section.id}>{section.name}</label>
+      <label htmlFor={section.id}>{section.name}</label>
     </div>
     ))}
     <div className="buttonPdf">

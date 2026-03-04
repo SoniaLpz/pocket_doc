@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
 import cough from '../public/assets/cough.jpg';
 import fever from '../public/assets/fever.jpg';
 import backpain from '../public/assets/back-pain.jpg';
 import migraine from '../public/assets/migraine.jpg';
 import stomachache from '../public/assets/stomachache.jpg';
 import insomnia from '../public/assets/insomnia.jpg';
-import Logo from './assests/Logo.png'
+import Logo from './assests/Logo.png';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Symptoms from './Components/symptoms';
 

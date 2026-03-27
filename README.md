@@ -23,7 +23,7 @@
 
 - **Navigation:** The home page propose a path for each symptoms. 
 - **Specific content:** The content is specific for each symptoms and is adapting depeding on which one you click. 
-- **Ingngredient List:** The list is made as a checkbox that can be imported as a pdf. 
+- **Ingredient List:** The list is made as a checkbox that can be imported as a pdf. 
 - **Youtube video:** You can access and play a youtube video directly on the website. 
 
 ## Tech Stack

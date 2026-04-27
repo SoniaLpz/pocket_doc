@@ -18,8 +18,6 @@ function generatePdf(checkedValues) {
     })
 );
 
-console.log(tableRows);
-
   doc.autoTable({
     startY: 30,
     head: [['Ingredients']], 

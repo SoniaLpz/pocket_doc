@@ -16,7 +16,7 @@ app.use(routes.allowedMethods());
       await sequelize.authenticate();
       console.log('Connection has been established successfully.');
       await sequelize.sync()
-      app.listen(3000);
+      app.listen(3002);
     } catch (error) {
       console.error('Unable to connect to the database:', error);
     }

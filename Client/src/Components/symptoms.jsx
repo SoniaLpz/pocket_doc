@@ -1,6 +1,5 @@
 import './components.css'
-import data from '../../../db.json'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import MovieClip from './Video/VideoYoutube'; 
 import Ingredients from './ingredientsList/ingredientsList';
@@ -59,6 +58,28 @@ function Symptoms() {
     <div className="video">
     <h3>Immune Boosting Movements</h3>
     <MovieClip videoId={symptoms.videoUrl} />
+    </div>
+    <div className="video">
+      <h3>Add a recipe</h3>
+      <form>
+      <div>
+      <label> Tile:</label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+      <label> Ingredients: </label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+      <label> Inscructions:</label>
+        <input type="text" name="title" />
+      </div>
+      <div>
+      <label> Cooking time:</label>
+        <input type="number" name="time" />
+      </div>
+      <input type="submit" />
+      </form>
     </div>
     </div>
 );

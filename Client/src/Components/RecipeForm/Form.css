@@ -1,0 +1,27 @@
+
+.Recipe {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    font-family: "Gill Sans", sans-serif;
+    padding-left: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+h3 {
+   text-align: center;
+}
+
+button {
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    background-color: #0084CE;
+    color: white;
+    text-align: center;
+    justify-content: center; 
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    margin: 0 auto;
+
+}

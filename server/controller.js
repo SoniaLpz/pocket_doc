@@ -29,5 +29,47 @@ const addRecipe = async(ctx) => {
     }
 }
 
-module.exports = {getAllRecipe, addRecipe};
+const deleteRecipe = async (ctx) => {
+  try {
+    const { id } = ctx.params
+    const recipe = await Recipe.findByPk(id)
+
+    if(!recipe) {
+      ctx.status = 404
+      console.log("Recipe not found")
+      return
+    }
+    await recipe.destroy()
+    ctx.status = 200
+    console.log("Recipe deleted")
+  } catch (error) {
+    ctx.status = 500
+    console.log(error, "Error deleting recipe")
+    
+  }
+}
+
+const modifyRecipe = async (ctx) => {
+  try {
+    const { id } = ctx.params
+    const recipe = await Recipe.findByPk(id)
+  
+    if(!recipe) {
+        ctx.status = 404
+        console.log("No recipe to modify")
+        return
+      }
+
+    const {title, ingredients, instructions, cookingTime} = ctx.request.body
+    await recipe.update({title, ingredients, instructions, cookingTime})
+    ctx.body = recipe
+    
+  } catch (error) {
+    ctx.status = 500
+    console.log(error, "Error modifying recipe")
+  }
+  
+}
+
+module.exports = {getAllRecipe, addRecipe, deleteRecipe, modifyRecipe};
 

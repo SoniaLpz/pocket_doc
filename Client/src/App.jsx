@@ -8,6 +8,7 @@ import insomnia from '../public/assets/insomnia.jpg';
 import Logo from './assests/Logo.png';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Symptoms from './Components/symptoms';
+import RegisterPage from './Authentication/RegisterPage';
 
 function App() {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ function App() {
       </>
       }/>
       <Route path='/symptoms/:id' element={<Symptoms />} />
+      <Route path='/register' element={<RegisterPage/>} />
     </Routes>
     </>
   )

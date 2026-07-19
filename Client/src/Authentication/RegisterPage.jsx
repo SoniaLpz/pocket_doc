@@ -9,14 +9,18 @@ function RegisterPage() {
 
     function handleChange(event) {
         const {name, value} = event.target; 
-        setFormData({
-            ...formData,
+        setFormData((previousData) =>({
+            ...previousData,
             [name]: value
-        });
+        }));
     }
 
     function handleSubmit(event) {
         event.preventDefault(); 
+        if(!formData.username || !formData.email || !formData.password) {
+            console.log("All fields are mandatory to register")
+            return; 
+        }
         console.log(formData);
     }
 
@@ -24,6 +28,7 @@ function RegisterPage() {
         <form onSubmit={handleSubmit}>
             <label htmlFor="username">Name</label>
             <input 
+            required 
             id = "username"
             name = "username"
             type = "text"
@@ -33,6 +38,7 @@ function RegisterPage() {
 
             <label htmlFor="email">Email</label>
             <input 
+            required
             id = "email"
             name = "email"
             type = "email"
@@ -42,6 +48,7 @@ function RegisterPage() {
 
             <label htmlFor="password">Password</label>
             <input 
+            required
             id = "password"
             name = "password"
             type = "password"

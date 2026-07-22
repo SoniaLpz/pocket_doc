@@ -5,7 +5,7 @@ const cors = require('@koa/cors');
 const app = new Koa();
 
 const sequelize = require("./DataBase/database");
-const routes = require("./router");
+const routes = require("./Routes/router");
 
 app.use(cors());
 app.use(bodyParser());

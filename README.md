@@ -17,7 +17,7 @@
 
 ### Screenshot
 
-![snapshot](./pocket_Doc/public/assets/PocketDoc-Project.png)
+![snapshot](./pocket_Doc/Client/public/assets/PocketDoc-Project.png)
 
 ## Features
 

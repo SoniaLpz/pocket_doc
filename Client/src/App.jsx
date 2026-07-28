@@ -9,6 +9,7 @@ import Logo from './assests/Logo.png';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Symptoms from './Components/symptoms';
 import RegisterPage from './Authentication/RegisterPage';
+import LoginPage from './Authentication/LoginPage';
 
 function App() {
   const navigate = useNavigate();
@@ -52,6 +53,7 @@ function App() {
       }/>
       <Route path='/symptoms/:id' element={<Symptoms />} />
       <Route path='/register' element={<RegisterPage/>} />
+      <Route path='/login' element={<LoginPage/>} />
     </Routes>
     </>
   )

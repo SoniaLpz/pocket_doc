@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { registerUser } from "../service/authService"
 
 function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -15,13 +16,25 @@ function RegisterPage() {
         }));
     }
 
-    function handleSubmit(event) {
+   async function handleSubmit(event) {
         event.preventDefault(); 
         if(!formData.username || !formData.email || !formData.password) {
             console.log("All fields are mandatory to register")
             return; 
         }
-        console.log(formData);
+        try {
+            const data = await registerUser(formData)
+            console.log(data);
+
+            setFormData({
+                username: "",
+                 email: "",
+                 password: "",
+            });
+            
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (

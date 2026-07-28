@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {createRecipe} from "../../service/recipe" 
+import {createRecipe} from "../../service/recipeService" 
 import './Form.css'
 
 function Recipe() {

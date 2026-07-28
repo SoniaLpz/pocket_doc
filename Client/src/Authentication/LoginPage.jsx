@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { loginUser } from "../service/authService";
 
 function LoginPage() {
     const [formData, setFormData] = useState({ 
@@ -15,13 +16,22 @@ function LoginPage() {
         }));
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault(); 
         if(!formData.email || !formData.password) {
-            console.log("All fiels are mandatory to login")
+            console.log("All fields are mandatory to login")
             return
         }
-        console.log(formData);
+
+        try {
+            const data = await loginUser(formData)
+            console.log(data);
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userId", data.user.id);
+            localStorage.setItem("userName", data.user.username);
+        } catch (error) {
+           console.error(error) 
+        }
     }
 
     return (

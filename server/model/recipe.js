@@ -11,6 +11,10 @@ const recipe = sequelize.define(
     ingredients: DataTypes.TEXT,
     instructions: DataTypes.TEXT, 
     cookingTime: DataTypes.INTEGER, 
+    symptom: {
+      type: DataTypes.STRING, 
+      allowNull: true,
+    }
     }
 )
 

@@ -1,27 +1,50 @@
 import { useState } from "react";
-import {createRecipe} from "../../service/recipeService" 
-import './Form.css'
+import { createRecipe } from "../../service/recipeService";
+import './Form.css';
+import { useParams } from "react-router-dom";
 
 function Recipe() {
-const [recipes, setRecipes] = useState({
+
+  const {id} = useParams()
+  const [recipes, setRecipes] = useState({
     title: '',
     ingredients: '',
     instructions: '',
     cookingTime: 0
-}); 
+  }); 
   
-function handleChange (e) {
+  function handleChange (e) {
     setRecipes((prevalue) => {
         return {
             ...prevalue, 
             [e.target.name] : e.target.value
         }
     })
-}
-async function handleSubmit(e) {
+  }
+  async function handleSubmit(e) {
     e.preventDefault();
-    await createRecipe(recipes); 
-     alert('A recipe was submitted');
+
+    if(!recipes.title || !recipes.ingredients || !recipes.instructions || !recipes.cookingTime) {
+      console.log("All fields are mandatory"); 
+      return 
+    }
+
+    try {
+      const recipeData = {
+        ...recipes, 
+        symptom: id,
+      }
+      const data = await createRecipe(recipeData); 
+        console.log("A recipe was submitted:", data);
+        setRecipes({
+          title: '',
+          ingredients: '',
+          instructions: '',
+          cookingTime: 0
+        })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -44,11 +67,10 @@ async function handleSubmit(e) {
       <label> Cooking time:</label>
         <input type="number" name="cookingTime" value={recipes.cookingTime} onChange={handleChange} />
       </div>
-      <button type="submit"> Submit</button>
+      <button type="submit" className="recipeButton"> Submit</button>
       </form>
       </div>
-
-);
+  );
 };
 
 export default Recipe;

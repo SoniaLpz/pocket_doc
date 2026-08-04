@@ -13,12 +13,13 @@ const getAllRecipe = async(ctx) => {
 
 const addRecipe = async(ctx) => {
     try {
-    const {title, ingredients, instructions, cookingTime,} = ctx.request.body
+    const {title, ingredients, instructions, cookingTime, symptom } = ctx.request.body
     const request = await Recipe.create({
         title, 
         ingredients, 
         instructions, 
         cookingTime,
+        symptom,
     }); 
     ctx.status = 201;
     ctx.body = request; 

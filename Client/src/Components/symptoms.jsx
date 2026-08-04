@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import MovieClip from './Video/VideoYoutube'; 
 import Recipe from './RecipeForm/recipeForm';
 import Ingredients from './ingredientsList/ingredientsList';
+import Recipes from './Recipes/recipes';
 
 function Symptoms() {
   const { id } = useParams();
@@ -62,6 +63,9 @@ function Symptoms() {
     </div>
     <div>
       <Recipe/>
+    </div>
+    <div>
+      <Recipes/>
     </div>
     </div>
 );

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../service/authService";
+import { useNavigate } from 'react-router-dom';
+
+
 
 function LoginPage() {
     const [formData, setFormData] = useState({ 
@@ -16,6 +19,8 @@ function LoginPage() {
         }));
     }
 
+    const navigate = useNavigate();
+
     async function handleSubmit(event) {
         event.preventDefault(); 
         if(!formData.email || !formData.password) {
@@ -29,6 +34,8 @@ function LoginPage() {
             localStorage.setItem("token", data.token);
             localStorage.setItem("userId", data.user.id);
             localStorage.setItem("userName", data.user.username);
+
+            navigate("/home")
         } catch (error) {
            console.error(error) 
         }

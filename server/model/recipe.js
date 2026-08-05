@@ -14,6 +14,10 @@ const recipe = sequelize.define(
     symptom: {
       type: DataTypes.STRING, 
       allowNull: true,
+    },
+    userId: {
+      type:DataTypes.INTEGER,
+      allowNull: true,
     }
     }
 )

@@ -6,21 +6,30 @@ import migraine from '../public/assets/migraine.jpg';
 import stomachache from '../public/assets/stomachache.jpg';
 import insomnia from '../public/assets/insomnia.jpg';
 import Logo from './assests/Logo.png';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Symptoms from './Components/symptoms';
 import RegisterPage from './Authentication/RegisterPage';
 import LoginPage from './Authentication/LoginPage';
 
 function App() {
   const navigate = useNavigate();
+  function logOut() {
+    localStorage.removeItem("token"); 
+    localStorage.removeItem("userId"); 
+    localStorage.removeItem("userName"); 
+
+    navigate("/login")
+
+  }
   
   return (
     <>
       <nav className='nav-bar'>
       <img src={Logo} alt="Logo"/>
+      <button onClick={() => logOut()} >Logout</button>
       </nav>
     <Routes>
-      <Route path="/" element={
+      <Route path="/home" element={
       <>
       <h1>Select your symptom</h1>
       <div className="box-grid">
@@ -54,6 +63,7 @@ function App() {
       <Route path='/symptoms/:id' element={<Symptoms />} />
       <Route path='/register' element={<RegisterPage/>} />
       <Route path='/login' element={<LoginPage/>} />
+      <Route path='/' element={<Navigate to="/login" replace />} />
     </Routes>
     </>
   )

@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { registerUser } from "../service/authService"
+import { registerUser } from "../service/authService";
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+
 
 function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -16,6 +20,8 @@ function RegisterPage() {
         }));
     }
 
+    const navigate = useNavigate();
+
    async function handleSubmit(event) {
         event.preventDefault(); 
         if(!formData.username || !formData.email || !formData.password) {
@@ -23,15 +29,17 @@ function RegisterPage() {
             return; 
         }
         try {
-            const data = await registerUser(formData)
-            console.log(data);
+          const data = await registerUser(formData)
+          console.log(data);
 
-            setFormData({
-                username: "",
-                 email: "",
-                 password: "",
-            });
-            
+          setFormData({
+            username: "",
+            email: "",
+            password: "",
+          });
+
+          navigate("/login");
+
         } catch (error) {
             console.error(error)
         }
@@ -72,6 +80,11 @@ function RegisterPage() {
             <button type= "submit">
               Register
             </button>
+
+             <p>
+                You already have an account ?
+                <Link to="/login"> Login to your account</Link>
+            </p>
 
         </form>
     )

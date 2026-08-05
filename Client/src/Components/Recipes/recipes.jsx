@@ -27,6 +27,8 @@ function Recipes() {
       (recipe) => recipe.symptom === id
     );
 
+    const currentUserId = Number(localStorage.getItem("userId"))
+
     function handleEdit(recipe){
         setEditRecipe(recipe)
     }
@@ -89,8 +91,12 @@ function Recipes() {
                 <p>
                     <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
                 </p>
-                <button type="button" className="deleteButton" onClick={()=> handleEdit(recipe)}> Update </button>
-                <button type="button" className="deleteButton" onClick={()=> handleDelete(recipe.id)}> Delete </button>
+                {recipe.userId === currentUserId &&(
+                    <>
+                    <button type="button" className="deleteButton" onClick={()=> handleEdit(recipe)}> Update </button>
+                    <button type="button" className="deleteButton" onClick={()=> handleDelete(recipe.id)}> Delete </button>
+                    </>
+                )}
             </article>
         )
         )}

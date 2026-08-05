@@ -14,12 +14,14 @@ const getAllRecipe = async(ctx) => {
 const addRecipe = async(ctx) => {
     try {
     const {title, ingredients, instructions, cookingTime, symptom } = ctx.request.body
+    const userId = ctx.state.user.id;
     const request = await Recipe.create({
         title, 
         ingredients, 
         instructions, 
         cookingTime,
         symptom,
+        userId,
     }); 
     ctx.status = 201;
     ctx.body = request; 
@@ -40,6 +42,15 @@ const deleteRecipe = async (ctx) => {
       console.log("Recipe not found")
       return
     }
+
+    if(recipe.userId !== ctx.state.user.id) {
+      ctx.status = 403; 
+      ctx.body= {
+        message: "You are not allowed to delete this recipe."
+      };
+      return;
+    }
+
     await recipe.destroy()
     ctx.status = 200
     console.log("Recipe deleted")
@@ -60,6 +71,14 @@ const modifyRecipe = async (ctx) => {
         console.log("No recipe to modify")
         return
       }
+
+    if(recipe.userId !== ctx.state.user.id) {
+      ctx.status = 403; 
+      ctx.body= {
+        message: "You are not allowed to modify this recipe."
+      };
+      return;
+    }
 
     const {title, ingredients, instructions, cookingTime} = ctx.request.body
     await recipe.update({title, ingredients, instructions, cookingTime})

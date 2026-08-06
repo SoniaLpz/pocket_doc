@@ -1,0 +1,56 @@
+
+.Login-RegisterForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background : aliceblue;
+    width: 100%;
+    max-width: 380px;
+    margin-top: 60px;
+    border-radius: 8px;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    width: 80%;
+    
+}
+
+.formContent input, 
+.formContent textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    
+}
+
+.FormButton {
+    justify-content: center;
+    width: 100%;
+    max-width: 80px;
+    height: 100%;
+    max-height: 50px;
+    padding: 12px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: none;
+}
+

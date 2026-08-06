@@ -2,6 +2,7 @@ import { useState } from "react";
 import { registerUser } from "../service/authService";
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import "./registerPage.css"
 
 
 
@@ -46,7 +47,9 @@ function RegisterPage() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className="Login-RegisterForm">
+        <form className="formContainer" onSubmit={handleSubmit}>
+            <div className="formContent">
             <label htmlFor="username">Name</label>
             <input 
             required 
@@ -56,7 +59,9 @@ function RegisterPage() {
             value = {formData.username}
             onChange = {handleChange}
             />
-
+            </div>
+            
+            <div className="formContent">
             <label htmlFor="email">Email</label>
             <input 
             required
@@ -66,7 +71,9 @@ function RegisterPage() {
             value = {formData.email}
             onChange = {handleChange}
             />
+            </div>
 
+            <div className="formContent">
             <label htmlFor="password">Password</label>
             <input 
             required
@@ -76,8 +83,9 @@ function RegisterPage() {
             value = {formData.password}
             onChange = {handleChange}
             />
+            </div>
 
-            <button type= "submit">
+            <button className= "FormButton" type= "submit">
               Register
             </button>
 
@@ -87,6 +95,7 @@ function RegisterPage() {
             </p>
 
         </form>
+        </div>
     )
 }
 

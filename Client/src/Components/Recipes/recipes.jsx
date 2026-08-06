@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"; 
 import { getAllRecipes, deleteRecipe, modifyRecipe } from "../../service/recipeService"; 
 import { useParams } from "react-router-dom";
+import "./recipes.css"
 
 
 function Recipes() {
@@ -74,10 +75,11 @@ function Recipes() {
     return(
         <main>
         <div className="Recipes">
-      <h3>Recipes</h3>
+            <h3>Recipes</h3>
+        <div className="CardRecipes">
         {error && <p>{error}</p>}
         {recipes.length === 0 && !error && (
-        <p>No recipes created yet.</p>
+            <p>No recipes created yet.</p>
         )}
         {recipesForCurrentSymptom.map((recipe)=> (
             <article key={recipe.id}>
@@ -93,13 +95,14 @@ function Recipes() {
                 </p>
                 {recipe.userId === currentUserId &&(
                     <>
-                    <button type="button" className="deleteButton" onClick={()=> handleEdit(recipe)}> Update </button>
-                    <button type="button" className="deleteButton" onClick={()=> handleDelete(recipe.id)}> Delete </button>
+                    <button className="CardButton" type="button" onClick={()=> handleEdit(recipe)}> Update </button>
+                    <button className="CardButton" type="button" onClick={()=> handleDelete(recipe.id)}> Delete </button>
                     </>
                 )}
             </article>
         )
-        )}
+    )}
+    </div>
         {editRecipe && (
             <form onSubmit={handleUpdate}>
                 <input

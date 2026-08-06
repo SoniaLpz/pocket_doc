@@ -48,3 +48,14 @@ button img {
  border-top-left-radius: 8px;
  border-top-right-radius: 8px;
 }
+
+.logout {
+  width: 60px;
+  height: 30px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  box-shadow: none;
+}

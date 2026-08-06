@@ -26,7 +26,7 @@ function App() {
     <>
       <nav className='nav-bar'>
       <img src={Logo} alt="Logo"/>
-      <button onClick={() => logOut()} >Logout</button>
+      <button className='logout'onClick={() => logOut()} >Logout</button>
       </nav>
     <Routes>
       <Route path="/home" element={

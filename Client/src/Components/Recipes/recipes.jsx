@@ -8,6 +8,7 @@ function Recipes() {
     const [recipes, setRecipes] = useState([]); 
     const [error, setError] = useState(""); 
     const [editRecipe, setEditRecipe] = useState(null)
+    const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0); 
     const { id } = useParams();
 
     useEffect(() => {
@@ -28,7 +29,21 @@ function Recipes() {
       (recipe) => recipe.symptom === id
     );
 
+    const currentRecipe = recipesForCurrentSymptom[currentRecipeIndex]; 
+
     const currentUserId = Number(localStorage.getItem("userId"))
+
+    function handleNext() {
+        if(currentRecipeIndex < recipesForCurrentSymptom.length -1) {
+            setCurrentRecipeIndex(currentRecipe+1)
+        }
+    }
+
+    function handlePrevious() {
+      if(currentRecipeIndex > 0) {
+            setCurrentRecipeIndex(currentRecipe-1)
+        }
+    }
 
     function handleEdit(recipe){
         setEditRecipe(recipe)
@@ -76,33 +91,39 @@ function Recipes() {
         <main>
         <div className="Recipes">
             <h3>Recipes</h3>
-        <div className="CardRecipes">
         {error && <p>{error}</p>}
         {recipes.length === 0 && !error && (
             <p>No recipes created yet.</p>
         )}
-        {recipesForCurrentSymptom.map((recipe)=> (
-            <article key={recipe.id}>
-                <h4>{recipe.title}</h4>
+        {currentRecipe && (
+            <div className="RecipeCarousel"> 
+            <button className="CarouselButton" type="button" onClick={handlePrevious} disabled={currentRecipeIndex === 0}>
+                ←
+            </button>
+
+            <article className="CardRecipes" key={currentRecipe.id}>
+                <h4>{currentRecipe.title}</h4>
                 <p>
-                    <strong>Ingredients:</strong> {recipe.ingredients}
+                    <strong>Ingredients:</strong> {currentRecipe.ingredients}
                 </p>
                 <p>
-                    <strong>Instructions:</strong> {recipe.instructions}
+                    <strong>Instructions:</strong> {currentRecipe.instructions}
                 </p>
                 <p>
-                    <strong>Cooking Time:</strong> {recipe.cookingTime} minutes
+                    <strong>Cooking Time:</strong> {" "} {currentRecipe.cookingTime} minutes
                 </p>
-                {recipe.userId === currentUserId &&(
+                {currentRecipe.userId === currentUserId &&(
                     <>
-                    <button className="CardButton" type="button" onClick={()=> handleEdit(recipe)}> Update </button>
-                    <button className="CardButton" type="button" onClick={()=> handleDelete(recipe.id)}> Delete </button>
+                    <button className="CardButton" type="button" onClick={()=> handleEdit(currentRecipe)}> Update </button>
+                    <button className="CardButton" type="button" onClick={()=> handleDelete(currentRecipe.id)}> Delete </button>
                     </>
                 )}
             </article>
-        )
-    )}
-    </div>
+             <button className="CarouselButton" type="button" onClick={handleNext} disabled={currentRecipeIndex === recipesForCurrentSymptom.length -1}>
+                 →
+            </button>
+            </div>
+    )}  
         {editRecipe && (
             <form onSubmit={handleUpdate}>
                 <input
@@ -132,8 +153,8 @@ function Recipes() {
                 value={editRecipe.cookingTime}
                 onChange={handleEditChange}
                 />
-                <button type="submit">Save changes</button>
-                <button type="submit" onClick={() => setEditRecipe(null)}>Cancel</button>
+                <button type="button">Save changes</button>
+                <button type="button" onClick={() => setEditRecipe(null)}>Cancel</button>
             </form>
         )}
       </div>

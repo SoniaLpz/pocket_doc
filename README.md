@@ -37,6 +37,15 @@
 - **Pdf Package** (PDF generation)
 - **Youtube Package** (Embedding YouTube video)
 
+### Backend
+- **Node.js**
+- **Koa**
+- **Sequelize** 
+- **PostgreSQL**
+- **bcrypt**
+- **JSON Web Token (JWT)** 
+- **dotenv**
+- **CORS** 
 
 ## Getting Started
 

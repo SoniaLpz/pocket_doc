@@ -10,6 +10,7 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Symptoms from './Components/symptoms';
 import RegisterPage from './Authentication/RegisterPage';
 import LoginPage from './Authentication/LoginPage';
+import NavBar from './Components/NavBar/NavBar'
 
 function App() {
   const navigate = useNavigate();
@@ -24,10 +25,7 @@ function App() {
   
   return (
     <>
-      <nav className='nav-bar'>
-      <img src={Logo} alt="Logo"/>
-      <button className='logout'onClick={() => logOut()} >Logout</button>
-      </nav>
+      <NavBar />
     <Routes>
       <Route path="/home" element={
       <>

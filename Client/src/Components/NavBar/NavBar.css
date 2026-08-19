@@ -1,0 +1,43 @@
+.nav-bar img {
+width: 150px ;
+display: block;
+margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 0.5rem 2rem;  
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.ProfileMenu { 
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dropButton{
+ width: 60px;
+  height: 30px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.logout {
+  width: 60px;
+  height: 30px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  box-shadow: none;
+}

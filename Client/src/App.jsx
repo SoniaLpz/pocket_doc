@@ -11,6 +11,7 @@ import Symptoms from './Components/symptoms';
 import RegisterPage from './Authentication/RegisterPage';
 import LoginPage from './Authentication/LoginPage';
 import NavBar from './Components/NavBar/NavBar'
+import MyRecipes from './Components/MyRecipes/MyRecipes';
 
 function App() {
   const navigate = useNavigate();
@@ -62,6 +63,7 @@ function App() {
       <Route path='/register' element={<RegisterPage/>} />
       <Route path='/login' element={<LoginPage/>} />
       <Route path='/' element={<Navigate to="/login" replace />} />
+      <Route path='/MyRecipes' element={<MyRecipes/>} />
     </Routes>
     </>
   )

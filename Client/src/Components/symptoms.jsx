@@ -26,7 +26,7 @@ function Symptoms() {
   return (
     <div className="topic">
     <div className="returnButton">
-      <button onClick={() => navigate(-1)}>Back</button>
+      <button onClick={() => navigate(`/home`)}>Back</button>
     </div>
     <h1>
      {symptoms.title}

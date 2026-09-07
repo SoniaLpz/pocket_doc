@@ -12,6 +12,8 @@ function RegisterPage() {
         email : "", 
         password : ""
     }) 
+    const [error, setError] = useState(""); 
+    const [message, setMessage] = useState("");
 
     function handleChange(event) {
         const {name, value} = event.target; 
@@ -26,12 +28,15 @@ function RegisterPage() {
    async function handleSubmit(event) {
         event.preventDefault(); 
         if(!formData.username || !formData.email || !formData.password) {
-            console.log("All fields are mandatory to register")
+            setError("All fields are mandatory to register")
             return; 
         }
         try {
           const data = await registerUser(formData)
           console.log(data);
+
+          setError("");
+          setMessage("Account created successfully")
 
           setFormData({
             username: "",
@@ -43,6 +48,8 @@ function RegisterPage() {
 
         } catch (error) {
             console.error(error)
+            setMessage(""); 
+            setEroor("Unable to create account")
         }
     }
 
@@ -84,10 +91,21 @@ function RegisterPage() {
             onChange = {handleChange}
             />
             </div>
-
+            
+            {error &&( 
+              <p className="errorMessage">
+                {error}
+              </p>
+            )}
+            {message &&( 
+              <p className="sucessMessage">
+                {message}
+              </p>
+            )}
             <button className= "FormButton" type= "submit">
               Register
             </button>
+
 
              <p>
                 You already have an account ?

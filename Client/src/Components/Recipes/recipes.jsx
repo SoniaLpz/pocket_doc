@@ -6,7 +6,9 @@ import "./recipes.css"
 
 function Recipes() {
     const [recipes, setRecipes] = useState([]); 
+    const [message, setMessage] = useState(""); 
     const [error, setError] = useState(""); 
+    const [loading, setLoading] = useState(true);
     const [editRecipe, setEditRecipe] = useState(null)
     const [currentRecipeIndex, setCurrentRecipeIndex] = useState(0); 
     const { id } = useParams();
@@ -19,6 +21,8 @@ function Recipes() {
             } catch (error) {
                 console.error(error); 
                 setError("Unable to load recipes")
+            } finally {
+                setLoading(false);
             }   
         }
 
@@ -35,13 +39,13 @@ function Recipes() {
 
     function handleNext() {
         if(currentRecipeIndex < recipesForCurrentSymptom.length -1) {
-            setCurrentRecipeIndex(currentRecipe+1)
+            setCurrentRecipeIndex(currentRecipeIndex + 1)
         }
     }
 
     function handlePrevious() {
       if(currentRecipeIndex > 0) {
-            setCurrentRecipeIndex(currentRecipe-1)
+            setCurrentRecipeIndex(currentRecipeIndex - 1)
         }
     }
 
@@ -70,19 +74,28 @@ function Recipes() {
                 previousRecipes.map((recipe) =>
                 recipe.id === updateRecipe.id ? updateRecipe : recipe)
             )
+            setError("")
+            setMessage("Recipe updated");
         } catch (error) {
             console.error(error)
+            setMessage("")
+            setError("Unable to update the recipe")
         }
         
     }
 
     async function handleDelete(id) {
+        const confirmed = window.confirm("Are you sure you want to delete this recipe?");
         try {
           await deleteRecipe(id); 
           setRecipes((previousRecipes)=> 
-        previousRecipes.filter((recipe) => recipe.id !==id))
+        previousRecipes.filter((recipe) => recipe.id !==id));
+          setError("");
+          setMessage("Recipe deleted successfully");
         } catch (error) {
-          console.error(error)
+          console.error(error);
+          setMessage("")
+          setError("Unable to delete the recipe");
         }
         
     }
@@ -90,10 +103,15 @@ function Recipes() {
     return(
         <main>
         <div className="Recipes">
-            <h3>Recipes</h3>
-        {error && <p>{error}</p>}
-        {recipes.length === 0 && !error && (
-            <p>No recipes created yet.</p>
+          <h3>Recipes</h3>
+          {loading && <p> Loading Recipes</p>}
+          {!loading && recipesForCurrentSymptom.length === 0 && !error && (
+            <p>No recipes created yet for this symptom.</p>
+        )}
+        {error && ( 
+            <p className="errorMessage">
+              {error}   
+            </p>
         )}
         {currentRecipe && (
             <div className="RecipeCarousel"> 
@@ -122,6 +140,8 @@ function Recipes() {
              <button className="CarouselButton" type="button" onClick={handleNext} disabled={currentRecipeIndex === recipesForCurrentSymptom.length -1}>
                  →
             </button>
+            {error && <p className="errorMessage">{error}</p>}
+            {message && <p className="successMessage">{message}</p>}
             </div>
     )}  
         {editRecipe && (
@@ -149,11 +169,11 @@ function Recipes() {
                 />
                 <input
                 type="number"
-                name="CookingTime"
+                name="cookingTime"
                 value={editRecipe.cookingTime}
                 onChange={handleEditChange}
                 />
-                <button type="button">Save changes</button>
+                <button type="submit">Save changes</button>
                 <button type="button" onClick={() => setEditRecipe(null)}>Cancel</button>
             </form>
         )}

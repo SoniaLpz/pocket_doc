@@ -61,10 +61,10 @@ function Symptoms() {
     <h3>Immune Boosting Movements</h3>
     <MovieClip videoId={symptoms.videoUrl} />
     </div>
-    <div>
+    <div className="recipeForm">
       <Recipe/>
     </div>
-    <div>
+    <div className="recipeList">
       <Recipes/>
     </div>
     </div>

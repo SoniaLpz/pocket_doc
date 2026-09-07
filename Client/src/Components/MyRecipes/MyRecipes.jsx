@@ -7,7 +7,9 @@ function MyRecipes() { 
 
     const [recipes, setRecipes] = useState([]);
     const [editRecipe, setEditRecipe] = useState(null) 
+    const [message, setMessage] = useState("");
     const [error, setError] = useState(""); 
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate()
 
     const currentUserId = Number(localStorage.getItem("userId"));
@@ -20,7 +22,9 @@ function MyRecipes() { 
             } catch (error) {
                 console.error(error); 
                 setError("Unable to load recipes")
-            }   
+            } finally {
+                setLoading(false);
+            }  
         }
 
         loadRecipes();
@@ -29,12 +33,17 @@ function MyRecipes() { 
     const myRecipes = recipes.filter((recipe) => recipe.userId === currentUserId);
     
     async function handleDelete(id) {
+        const confirmed = window.confirm("Are you sure you want to delete this recipe?");
         try {
           await deleteRecipe(id); 
           setRecipes((myRecipes)=> 
-        myRecipes.filter((recipe) => recipe.id !==id))
+            myRecipes.filter((recipe) => recipe.id !==id))
+          setError("");
+          setMessage("Recipe deleted successfully");
         } catch (error) {
           console.error(error)
+          setMessage("")
+          setError("Unable to delete the recipe");
         }
         
     }
@@ -45,8 +54,14 @@ function MyRecipes() { 
       <button onClick={() => navigate(`/home`)}>Go to menu</button>
     </div>
             <h1>My Recipes</h1>
+            {loading && <p>Loading recipes ...</p>}
+            {error && (
+                <p className='errorMessage'>
+                  {error}    
+                </p>
+            )}
             <div className='MyRecipes'>
-            {myRecipes.length === 0 ? (<p>You have not created any recipes yet.</p>)
+            {!loading && !error && myRecipes.length === 0 ? (<p>You have not created any recipes yet.</p>)
             :(
              myRecipes.map((recipe) => (
              <article className='CardRecipes' key={recipe.id}>

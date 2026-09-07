@@ -11,6 +11,7 @@ function LoginPage() {
         email : "", 
         password : ""
     }) 
+    const [error, setError] = useState(""); 
 
     function handleChange(event) {
         const {name, value} = event.target; 
@@ -36,9 +37,11 @@ function LoginPage() {
             localStorage.setItem("userId", data.user.id);
             localStorage.setItem("userName", data.user.username);
 
-            navigate("/home")
+            setError("");
+            navigate("/home");
         } catch (error) {
            console.error(error) 
+           setError("Invalid Email or password");
         }
     }
 
@@ -70,6 +73,11 @@ function LoginPage() {
             />
             </div>
 
+            {error && (
+              <p className="errorMessage">
+                {error}
+              </p>
+            )}
             <button className= "FormButton" type= "submit">
               Login
             </button>

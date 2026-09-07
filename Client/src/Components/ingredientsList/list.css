@@ -5,14 +5,13 @@
 
 .List h1 {
     color: #FFFF;
-    font-family: 'Courier New', Courier, monospace;
+    
     font-size: 35px;
     font-style: italic;
     margin-bottom: 50px;
 }
 
 .List .sections {
-    font-family: 'Courier New', Courier, monospace;
     margin: 10px;
 }
 
@@ -32,6 +31,6 @@
     text-align: center;
     justify-content: center; 
     align-items: center; 
-    font-family: 'Courier New', Courier, monospace;
+
 }
 

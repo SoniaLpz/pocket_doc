@@ -4,7 +4,7 @@ import './Form.css';
 import { useParams } from "react-router-dom";
 
 function Recipe() {
-
+  const [message, setMessage] = useState(""); 
   const {id} = useParams()
   const [recipes, setRecipes] = useState({
     title: '',
@@ -35,7 +35,7 @@ function Recipe() {
         symptom: id,
       }
       const data = await createRecipe(recipeData); 
-        console.log("A recipe was submitted:", data);
+        setMessage("Recipe created !")
         setRecipes({
           title: '',
           ingredients: '',
@@ -43,31 +43,36 @@ function Recipe() {
           cookingTime: 0
         })
     } catch (error) {
-      console.error(error)
+      setMessage("Unable to create recipe")
     }
   }
 
   return (
     <div className="Recipe">
       <h3>Add a recipe</h3>
-      <form onSubmit={handleSubmit}>
-      <div>
+      <form className= "recipeForm"onSubmit={handleSubmit}>
+      <div className="formGroup">
       <label> Title:</label>
         <input type="text" name="title" value={recipes.title} onChange={handleChange}  />
       </div>
-      <div>
+      <div className="formGroup">
       <label> Ingredients: </label>
-        <input type="text" name="ingredients"  value={recipes.ingredients} onChange={handleChange}  />
+        <textarea type="text" name="ingredients"  value={recipes.ingredients} onChange={handleChange}  />
       </div>
-      <div>
+      <div className="formGroup">
       <label> Inscructions:</label>
-        <input type="text" name="instructions" value={recipes.instructions} onChange={handleChange}/>
+        <textarea type="text" name="instructions" value={recipes.instructions} onChange={handleChange}/>
       </div>
-      <div>
+      <div className="formGroup">
       <label> Cooking time:</label>
         <input type="number" name="cookingTime" value={recipes.cookingTime} onChange={handleChange} />
       </div>
-      <button type="submit" className="recipeButton"> Submit</button>
+      <button type="submit" className="recipeButton"> Add recipe</button>
+      {message && (
+        <p className='formMessage'>
+          {message}
+        </p>
+      )}
       </form>
       </div>
   );
